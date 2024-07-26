@@ -1,13 +1,10 @@
+using MathGame.Enums;
+
 namespace MathGame.Menu;
 using MathGame.Game;
 
-public class Menu
+public class Menu(Game game)
 {
-    private Game _game;
-    public Menu(Game game)
-    {
-        _game = game;
-    }
     
     public void DisplayMainMenu()
     {
@@ -19,22 +16,27 @@ public class Menu
     {
         if (input == "1")
         {
-            Console.WriteLine("Addition selected");
-            string question = _game.GenerateAdditionQuestion();
-            Console.WriteLine(question);
-            Console.WriteLine(_game.Answer);
+            game.CreateQuestion(Operation.Addition);
+            string question = game.Question;
+            Console.WriteLine($"question: {question}");
         }
         else if (input == "2")
         {
-            Console.WriteLine("Subtraction selected");
+            game.CreateQuestion(Operation.Subtraction);
+            string question = game.Question;
+            Console.WriteLine($"question: {question}");
         }
         else if (input == "3")
         {
-            Console.WriteLine("Multiplication selected");
+            game.CreateQuestion(Operation.Multiplication);
+            string question = game.Question;
+            Console.WriteLine($"question: {question}");
         }
         else if (input == "4")
         {
-            Console.WriteLine("Division selected");
+            game.CreateQuestion(Operation.Division);
+            string question = game.Question;
+            Console.WriteLine($"question: {question}");
         }
         else
         {

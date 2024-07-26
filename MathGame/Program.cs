@@ -10,7 +10,10 @@ class Program
         MenuClass menu = new MenuClass(game);
         
         menu.DisplayMainMenu();
-        string input = Console.ReadLine();
-        menu.HandleOptionSelection(input);
+        string questionSelection = Console.ReadLine();
+        menu.HandleOptionSelection(questionSelection);
+        string userAnswer = Console.ReadLine();
+        game.HandleUserAnswer(userAnswer);
+
     }
 }
